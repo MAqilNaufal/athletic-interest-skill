@@ -2,22 +2,19 @@
 
 ## Included files
 
-| File | Public purpose | Source origin |
+| File/group | Public purpose | Source origin |
 |---|---|---|
-| `SKILL.md` | Entry-point editorial workflow | Curated, rewritten public adaptation of private working notes |
-| `README.md` | Scope, non-affiliation, and limits | New public documentation |
-| `LICENSE` | MIT license for this repository's authored text | New public licensing notice |
-| `.gitignore` | Prevents local media, credentials, and generated artifacts from tracking | New public configuration |
-| `references/editorial-framework.md` | General argument, evidence, and mechanism guidance | Curated, rewritten public adaptation |
-| `references/production-specification.md` | Renderer-neutral sequence contract | Curated, rewritten public adaptation |
-| `references/quality-review.md` | Independent production review gates | Curated, rewritten public adaptation |
-| `references/render-reliability.md` | Generic render and delivery checks | Curated, rewritten public adaptation |
-| `references/research-protocol.md` | Generic evidence and review-level protocol | Curated, rewritten public adaptation |
-| `references/audiovisual-review.md` | Review limitations and model-assisted-analysis cautions | Curated, rewritten public adaptation |
+| `SKILL.md` | Entry-point episode workflow and verification | Curated, rewritten public adaptation of private working notes |
+| `README.md` | Scope, quick start, and limitations | New public documentation |
+| `LICENSE` | MIT license for this repository's authored material | New public licensing notice |
+| `.gitignore` | Excludes local media, credentials, and generated artifacts | New public configuration |
+| `references/*.md` | General evidence, workflow, shot-grammar, pacing, production, and QA guidance | Curated, rewritten public adaptation |
+| `templates/*` | Original dossier formats for claim, asset, sequence, and review records | New public templates |
+| `scripts/validate_dossier.py` | Original stdlib-only structural dossier validator | New public utility |
 
 ## License and attribution rationale
 
-The repository contains original, generalized documentation authored for public release. The MIT License applies only to that documentation. It does not grant rights in any third-party audiovisual work, trademark, logo, channel identity, source-media frame, transcript, music, or other external material. The documentation is independent editorial-analysis guidance and is not affiliated with Athletic Interest.
+The repository contains original, generalized documentation, templates, and code authored for public release. The MIT License applies only to those materials. It does not grant rights in any third-party audiovisual work, trademark, logo, channel identity, source-media frame, transcript, music, or other external material. The documentation is independent editorial-production guidance and is not affiliated with Athletic Interest.
 
 ## Excluded from publication
 
@@ -30,4 +27,4 @@ The repository contains original, generalized documentation authored for public 
 
 ## Verification
 
-Before commit, the export must pass: repository-wide secret scanning; exact-content duplicate detection within the export; exact-file-hash comparison against the private source tree; YAML/front-matter parsing; Markdown-link checks; tracked-file review; and a check that no forbidden local-path or internal-artifact markers are present. Results are recorded in the release commit and verified again from the public remote.
+Before commit, review tracked files for secrets, local paths, private source material, and unintended artifacts. Validate the example dossier from `templates/`; run Python compilation for the utility; check Markdown links; and inspect the final staged diff. Verify the public remote after push.
