@@ -1,0 +1,2 @@
+cue_id,sequence_id,spoken_text,claim_ids,visual_job,delivery_note,voice_policy,reference_id,take_id,start_s,end_s,asr_status,speaker_check_status,retime_status,status
+N-001,S-001,,C-01,proof|context|mechanism|comparison|consequence|reset,calm|precise|pause_before_turn,user-authorized-private-clone,approved-private-reference,,,,pending,pending,pending,planned

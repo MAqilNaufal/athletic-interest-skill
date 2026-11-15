@@ -13,14 +13,30 @@ REQUIRED_FILES = {
     "claim-map.md": ["# Claim map", "## Brief", "## Claims", "## Section handoffs"],
     "sequence-board.md": ["# Sequence board", "## Sequence notes"],
     "review-gates.md": ["# Review gates", "## Delivery label"],
-    "asset-ledger.csv": [],
+}
+CSV_SCHEMAS = {
+    "asset-ledger.csv": {
+        "asset_id", "sequence_id", "description", "narrative_role", "classification",
+        "source", "date", "rights_status", "credit_needed", "crop_or_usage_notes",
+        "replacement_if_missing", "status",
+    },
+    "visual-asset-plan.csv": {
+        "asset_id", "sequence_id", "cue_id", "viewer_understanding", "visual_job",
+        "asset_class", "source_or_build", "rights_status", "proof_status", "crop_treatment",
+        "credit_or_label", "visible_operation", "fallback", "status",
+    },
+    "narration-cue-map.csv": {
+        "cue_id", "sequence_id", "spoken_text", "claim_ids", "visual_job", "delivery_note",
+        "voice_policy", "reference_id", "take_id", "start_s", "end_s", "asr_status",
+        "speaker_check_status", "retime_status", "status",
+    },
+    "music-cue-map.csv": {
+        "music_cue_id", "sequence_ids", "start_s", "end_s", "narrative_state", "energy_1_to_5",
+        "tempo_feel", "instrumentation_role", "track_or_stem_source", "license_status",
+        "entry_exit_action", "ducking_or_silence_plan", "status",
+    },
 }
 ALLOWED_VERDICTS = {"PASS", "FAIL", "UNREVIEWED", "BLOCKED"}
-ASSET_HEADERS = {
-    "asset_id", "sequence_id", "description", "narrative_role", "classification",
-    "source", "date", "rights_status", "credit_needed", "crop_or_usage_notes",
-    "replacement_if_missing", "status",
-}
 
 
 def error(message: str) -> None:
@@ -43,20 +59,22 @@ def main() -> int:
         if not path.is_file():
             failures.append(f"missing required file: {name}")
             continue
-        if name.endswith(".md"):
-            text = path.read_text(encoding="utf-8")
-            for heading in headings:
-                if heading not in text:
-                    failures.append(f"{name} missing heading: {heading}")
+        text = path.read_text(encoding="utf-8")
+        for heading in headings:
+            if heading not in text:
+                failures.append(f"{name} missing heading: {heading}")
 
-    ledger = root / "asset-ledger.csv"
-    if ledger.is_file():
-        with ledger.open(newline="", encoding="utf-8") as handle:
+    for name, expected_headers in CSV_SCHEMAS.items():
+        path = root / name
+        if not path.is_file():
+            failures.append(f"missing required file: {name}")
+            continue
+        with path.open(newline="", encoding="utf-8") as handle:
             reader = csv.DictReader(handle)
             found = set(reader.fieldnames or [])
-            missing = ASSET_HEADERS - found
-            if missing:
-                failures.append("asset-ledger.csv missing headers: " + ", ".join(sorted(missing)))
+        missing = expected_headers - found
+        if missing:
+            failures.append(f"{name} missing headers: " + ", ".join(sorted(missing)))
 
     gates = root / "review-gates.md"
     if gates.is_file():
@@ -64,8 +82,7 @@ def main() -> int:
         for gate in ("Technical", "Factual", "Editorial", "Audio"):
             if gate not in text:
                 failures.append(f"review-gates.md missing gate: {gate}")
-        verdicts = {word for word in ALLOWED_VERDICTS if word in text}
-        if not verdicts:
+        if not any(word in text for word in ALLOWED_VERDICTS):
             failures.append("review-gates.md has no recognized verdict")
 
     if failures:
@@ -74,7 +91,7 @@ def main() -> int:
         return 1
 
     print(f"PASS: dossier structure valid: {root}")
-    print("NOTE: this validates file structure only; evidence, rights, edit, and audio still require review.")
+    print("NOTE: this validates structure only; evidence, rights, clone checks, mix, and editorial approval still require review.")
     return 0
 
 

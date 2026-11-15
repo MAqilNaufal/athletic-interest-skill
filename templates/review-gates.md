@@ -6,8 +6,8 @@ Use only `PASS`, `FAIL`, `UNREVIEWED`, or `BLOCKED`.
 |---|---|---|---|---|
 | Technical | UNREVIEWED | full decode, duration, aspect, safe areas, boundaries, sync |  | yes |
 | Factual | UNREVIEWED | claims, sources, dates, units, subject match, rights |  | yes |
-| Editorial | UNREVIEWED | question, proof, mechanism, payoff, handoffs |  | yes |
-| Audio | UNREVIEWED | direct listening of encoded mix |  | yes |
+| Editorial | UNREVIEWED | question, proof, mechanism, payoff, handoffs, asset-job fit |  | yes |
+| Audio | UNREVIEWED | direct listening, approved user clone, ASR/speaker checks, VO timing, music cues, loudness |  | yes |
 
 ## Delivery label
 

@@ -1,0 +1,2 @@
+asset_id,sequence_id,cue_id,viewer_understanding,visual_job,asset_class,source_or_build,rights_status,proof_status,crop_treatment,credit_or_label,visible_operation,fallback,status
+A-001,S-001,N-001,,proof|context|mechanism|comparison|consequence,primary_document|licensed_footage|original_chart|original_diagram|reconstruction|generated_illustration,,unknown|cleared|restricted|blocked,proof|context|analogy|reconstruction,,,isolate|compare|transfer|accumulate|replace|reveal|hold,,planned

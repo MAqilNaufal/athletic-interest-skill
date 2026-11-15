@@ -1,15 +1,17 @@
 # Sequence board — <episode title>
 
-| ID | Narration cue | Claim IDs | Visual job | Evidence/asset IDs | Entry state | Operation | Result/consequence | Audio intent | Review status |
+| ID | Narration cue IDs | Claim IDs | Visual job | Asset-plan IDs | Entry state | Operation | Result/consequence | Music-cue IDs | Review status |
 |---|---|---|---|---|---|---|---|---|---|
-| S-001 |  | C-01 | proof / context / mechanism / comparison / consequence / reset | A-001 |  |  |  |  | planned |
+| S-001 | N-001 | C-01 | proof / context / mechanism / comparison / consequence / reset | A-001 |  |  |  | M-001 | planned |
 
 ## Sequence notes
 
 ### S-001
 
 - Actor, resource, unit, relation, constraint:
-- Why this medium:
+- Why this primary asset class:
 - What persists/exits and why:
-- Source/credit treatment:
+- Source/credit/illustration treatment:
 - Safe-area or reading-time requirement:
+- VO retime confirmed after final cloned take:
+- Music yield/ducking requirement:

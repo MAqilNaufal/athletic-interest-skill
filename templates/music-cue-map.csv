@@ -1,0 +1,2 @@
+music_cue_id,sequence_ids,start_s,end_s,narrative_state,energy_1_to_5,tempo_feel,instrumentation_role,track_or_stem_source,license_status,entry_exit_action,ducking_or_silence_plan,status
+M-001,S-001,,,tension|investigation|explanation|consequence|release|reset,1|2|3|4|5,slow|steady|driving,sparse_bed|build|thinned_bed|payoff|silence,,unknown|cleared|restricted|blocked,fade|cut_at_edit|stem_swap|hold,yield_to_vo|yield_to_quote|yield_to_source_audio|none,planned
