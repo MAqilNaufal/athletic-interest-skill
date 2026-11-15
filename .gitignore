@@ -1,0 +1,28 @@
+# Local/editor artifacts
+.DS_Store
+*.log
+*.tmp
+*.bak
+__pycache__/
+*.py[cod]
+
+# Media and generated review artifacts
+media/
+assets/
+frames/
+contact-sheets/
+renders/
+exports/
+receipts/
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials/
+secrets/
+
+# Editor state
+.vscode/
+.idea/
