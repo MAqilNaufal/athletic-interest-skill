@@ -23,3 +23,9 @@ Check available storage and authorized sources before retrieval. At an authentic
 ## Evidence language
 
 Use `measured` for instrument output, `observed` for directly inspected material, `inferred` for a lesson derived from observations, and `provisional` for incomplete or model-generated interpretation. A caption, waveform, decode, or model report is not direct listening.
+
+## Scope ledger and pack freshness
+
+Before assigning work, resolve installed skill realpath, owning Git root, HEAD/dirty state and canonical remote revision. Inventory references, templates and validator at the selected revision. Preserve dirty installed work and inspect the published tree in isolation; never reset or pull over active edits. Record which revision actually directed production. A loaded entry point or missing local reference does not establish that a broader pack or prior study never existed.
+
+Keep a private scope ledger: source set/canonical IDs, snapshot date, previously recorded review mode, this session's actual inspection mode, inaccessible entries, interval-union coverage and provenance receipts. A public generalized pack is not the private study itself. Do not copy corpus counts, timecodes, screenshots, private asset/voice locations or session IDs into the public skill. Transfer only general lessons and newly authored examples. Sampled images do not establish a soundtrack recipe; validate model audio methods with a silent control before using their descriptions, and never call model output direct listening.

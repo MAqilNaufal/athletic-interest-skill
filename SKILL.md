@@ -1,7 +1,14 @@
 ---
 name: athletic-interest-editorial-analysis
 description: "Plan and review evidence-led documentary video essays."
+version: 1.1.0
+author: MAqilNaufal, Hermes Agent
 license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [editorial, documentary, production]
+    related_skills: []
 ---
 
 # Editorial analysis for sports and business documentaries
@@ -21,6 +28,8 @@ Do not use it to infer facts from unreviewed media, treat a transcript as a comp
 
 Create one folder for the episode and copy the files from `templates/` into it:
 
+- `production-brief.md` - audience, thesis, authorization, runtime, narrator, rights, budget, source cutoff, scope ledger and blockers.
+- `storyboard-contract.json` - machine-checkable cue/shot/renderer contract and exact-master gate receipts.
 - `claim-map.md` — claims, evidence, uncertainty, and section handoffs.
 - `asset-ledger.csv` — provenance, rights status, narrative role, and gaps.
 - `visual-asset-plan.csv` — asset class and treatment for every beat.
@@ -29,10 +38,11 @@ Create one folder for the episode and copy the files from `templates/` into it:
 - `sequence-board.md` — shot-level visual operations and timing.
 - `review-gates.md` — technical, factual, editorial, and audio verdicts.
 
-Run `terminal(command="python3 scripts/validate_dossier.py <dossier>")` before storyboard approval and before delivery. A clean validation confirms dossier structure only; it is not factual, rights, voice, music, or artistic approval.
+Run `terminal(command="python3 scripts/validate_dossier.py <dossier>")` for planning structure, then add `--strict` before production and `--release` before final delivery. Fill the contract and brief first; untouched templates intentionally fail strict validation. A clean validation confirms dossier structure only; it is not factual, rights, voice, music, or artistic approval.
 
 ## Procedure
 
+0. **Verify scope and freshness.** Resolve installed realpath, owning repository, HEAD, dirty state and canonical remote revision. Preserve dirty work; inspect a pinned published copy separately if stale. Inventory the full pack, not just SKILL.md. Keep public guidance separate from private study receipts; record prior coverage and what this session actually inspected in the brief. A missing local file is not proof prior research never existed.
 1. **Frame the question.** State the question, stakes, audience, target duration, named actors, and what evidence could disprove the intended answer. Completion: the opening question is answerable and falsifiable.
 2. **Build the evidence base.** Record every source, date, scope, review level, and rights status in the claim map and asset ledger. Keep metadata, transcript reading, frame samples, continuous visual review, and direct listening distinct. Completion: every factual claim has a source or is explicitly marked provisional.
 3. **Choose the argument shape.** Select a causal chain, comparison, clue-and-reveal, or list only when it fits the evidence. Give every section one obstacle to remove and one handoff question. Completion: the section order makes the answer progressively clearer.

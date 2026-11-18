@@ -13,7 +13,7 @@ Write for spoken understanding and visual consequence, not for an essay read alo
 
 ## Narration cue map
 
-Write the complete spoken text in `narration-cue-map.csv`, split into retimable meaning units. Each row maps to a sequence ID, visual job, intended delivery, and final start/end cue. Acronyms, names, and numbers must be written phonetically when the voice engine mispronounces them.
+Write the complete spoken text in `narration-cue-map.csv`, split into retimable meaning units. Each row maps to a sequence ID, visual job, intended delivery, and final start/end cue. Keep canonical display/subtitle text separate from synthesis-only pronunciation text. If an engine mispronounces a name or acronym, use a reviewed pronunciation mapping, not an untracked rewrite.
 
 ## User-authorized clone policy
 
@@ -27,3 +27,9 @@ For this project family, final VO uses the user's own authorized voice clone unl
 - Any missing approved reference, failed ASR, failed speaker check, or unreviewed delivered mix leaves the audio gate `BLOCKED` or `UNREVIEWED`.
 
 Use the `voice-cloning-tts` skill for engine setup, synthesis, loudness normalization, ASR, and speaker verification. The final mix must be directly listened to at normal playback speed.
+
+## Pronunciation repairs without semantic drift
+
+Original example: canonical/display/subtitle line `The API returns the result.` may use synthesis text `The A P I returns the result.` if the selected English voice pronounces that correctly. Record both, language, take ID and meaning-review receipt; listen to the actual candidate. Do not change a product name into a similar common word just to obtain low ASR error. Keep qualifiers, amounts, actors and dates identical in meaning. For multilingual narration, test the requested language's letter names rather than assuming English pronunciation.
+
+Per-line ASR detects likely omissions, substitutions and pronunciation problems. Speaker similarity is a reference-dependent diagnostic, not identity, naturalness or consent proof. A zero-error transcript cannot close listening review; disagreement between recognizers is a review queue, not permission to silently rewrite subtitles. Listen to repaired takes and the final encoded mix at normal speed. Regenerate only affected takes using the approved reference, measure their new durations, preserve accepted gaps, then rebuild dependent shot/caption/music cues. Freeze accepted unaffected takes. Keep all reference audio, embeddings and private paths out of public files.

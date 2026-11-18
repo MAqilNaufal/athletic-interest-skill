@@ -15,3 +15,12 @@ Use only `PASS`, `FAIL`, `UNREVIEWED`, or `BLOCKED`.
 - [ ] Motion preview / animatic
 - [ ] Rendered draft
 - [ ] Final film
+
+## Exact artifact and authorization
+
+- Master SHA256: UNREVIEWED
+- Per-gate receipt IDs and reviewed master SHA256: UNREVIEWED
+- Final approver / approval receipt / approved master SHA256: UNREVIEWED
+- Destination / visibility / upload permission receipt: NOT AUTHORIZED
+- Any master change invalidates approval. Never preapprove before QA.
+- Mirror these verdicts and receipts in storyboard-contract.json; validator cannot grant approval.

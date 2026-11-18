@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "fps": {
+    "num": 24,
+    "den": 1
+  },
+  "renderer": {
+    "revision": "TODO",
+    "support_receipt": "TODO",
+    "types": {
+      "parameter_update": {
+        "required_props": [
+          "parameter_id",
+          "before_value",
+          "after_value"
+        ],
+        "supported_props": [
+          "parameter_id",
+          "before_value",
+          "after_value"
+        ]
+      }
+    }
+  },
+  "assets": [
+    {
+      "asset_id": "A-TOY",
+      "source": "Original authored schematic",
+      "rights_status": "TODO",
+      "provenance_receipt": "TODO",
+      "evidence_class": "schematic"
+    }
+  ],
+  "cues": [
+    {
+      "cue_id": "N-TOY",
+      "take_id": "T-TOY",
+      "canonical_text": "The parameter changes during training.",
+      "synthesis_text": "The parameter changes during training.",
+      "subtitle_text": "The parameter changes during training.",
+      "meaning_review_receipt": "",
+      "start_s": null,
+      "end_s": null,
+      "measurement_receipt": "TODO"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "S-TOY",
+      "cue_ids": [
+        "N-TOY"
+      ],
+      "asset_ids": [
+        "A-TOY"
+      ],
+      "visual_type": "parameter_update",
+      "props": {
+        "parameter_id": "w1",
+        "before_value": 0.2,
+        "after_value": 0.3
+      },
+      "start_frame": 0,
+      "before_frame": 0,
+      "operate_frame": 24,
+      "land_frame": 48,
+      "end_frame": 72,
+      "proof_receipt": "TODO"
+    }
+  ],
+  "master_sha256": "",
+  "gates": {
+    "Technical": {
+      "verdict": "UNREVIEWED",
+      "receipt": "",
+      "master_sha256": ""
+    },
+    "Factual": {
+      "verdict": "UNREVIEWED",
+      "receipt": "",
+      "master_sha256": ""
+    },
+    "Editorial": {
+      "verdict": "UNREVIEWED",
+      "receipt": "",
+      "master_sha256": ""
+    },
+    "Audio": {
+      "verdict": "UNREVIEWED",
+      "receipt": "",
+      "master_sha256": ""
+    }
+  },
+  "final_approval": {
+    "verdict": "UNREVIEWED",
+    "reviewer": "",
+    "receipt": "",
+    "master_sha256": ""
+  }
+}

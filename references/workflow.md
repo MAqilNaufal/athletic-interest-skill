@@ -4,7 +4,7 @@
 
 Record audience, target duration, delivery format, central question, stakes, named entities, and the decision the viewer should be able to make after watching. State what would falsify the working thesis.
 
-**Output:** one-paragraph brief and a question with a measurable or attributable answer.
+**Output:** completed [production brief](../templates/production-brief.md) and a question with a measurable or attributable answer. Include narrator consent/provenance, runtime authorization, source cutoff, rights, budget, deliverables, scope and upload gates; missing inputs remain named blockers. A one-paragraph creative premise alone is not a production brief.
 
 ## 2. Research and evidence map
 

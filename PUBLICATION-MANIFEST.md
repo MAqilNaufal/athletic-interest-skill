@@ -10,7 +10,8 @@
 | `.gitignore` | Excludes local media, credentials, and generated artifacts | New public configuration |
 | `references/*.md` | General evidence, workflow, visual asset, script/voice, music, production, and QA guidance | Curated, rewritten public adaptation |
 | `templates/*` | Original dossier formats for claims, visual assets, narration, music, sequences, and reviews | New public templates |
-| `scripts/validate_dossier.py` | Original stdlib-only structural dossier validator | New public utility |
+| `scripts/validate_dossier.py` | Original stdlib-only structural and declared-contract validator | New public utility |
+| `tests/*.py` | Synthetic contract regression fixtures, not production QA receipts | New public tests |
 
 ## License and attribution rationale
 

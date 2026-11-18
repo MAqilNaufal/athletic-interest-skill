@@ -23,3 +23,7 @@ Prepare a claim map, source and rights inventory, narration cue map, annotated s
 6. Has delivered audio been directly reviewed?
 
 After rejection, record the feedback, inspect the encoded sequence, and identify the smallest evidence-supported change. Do not treat a longer rule list or a successful export as artistic approval.
+
+## Exact-master final approval
+
+Keep upload permission separate from artifact approval. Record destination, visibility and authorization in the brief; default to no upload. After technical, factual, editorial and audio review, each gate records a receipt and the exact encoded master SHA256 reviewed. Final approval records that same hash, reviewer and approval receipt. Never prefill PASS or auto-approve on encoder success. If the picture, audio, facts, subtitles or mux changes, invalidate approval and repeat affected reviews against the new master. A prior chapter proof or sampled contact sheet does not approve the assembled film. Transfer only the approved artifact when upload is separately authorized, then verify remote size/hash where the destination supports it.

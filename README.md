@@ -18,12 +18,15 @@ An independent, evidence-led workflow for developing documentary essays: brief, 
 ## Quick start
 
 1. Copy `templates/` into a new episode dossier.
-2. Fill the claim map, visual asset plan, narration cue map, and music cue map before production.
+2. Fill the production brief, claim map, visual asset plan, narration cue map, music cue map and executable storyboard contract before production. Missing authorization, sources, rights or narrator provenance remain explicit blockers.
 3. Generate and verify the approved user-clone narration; retime the sequence board from final cues.
 4. Run:
 
 ```bash
-python3 scripts/validate_dossier.py /path/to/episode-dossier
+python3 scripts/validate_dossier.py episode-dossier
+python3 scripts/validate_dossier.py episode-dossier --strict
+python3 scripts/validate_dossier.py episode-dossier --release
+python3 -m unittest discover -s tests -v
 ```
 
 5. Review the animatic and final encoded video using `review-gates.md`.
@@ -47,6 +50,12 @@ Private voice references, clone configurations, takes, embeddings, raw media, an
 - Source material and music need their own rights, attribution, and clearance review.
 - A strong method does not certify factual accuracy, artistic approval, or legal clearance for a particular production.
 - The repository contains no source-media corpus and makes no channel-wide style claims.
+
+## Version 1.1 compatibility
+
+Planning retains the original command and CSV headers, but now requires `production-brief.md` and validates each review verdict independently. Add the brief to older dossiers. `--strict` requires measured cue/CSV agreement, resolved IDs, renderer-supported properties, asset provenance and proof receipts in `storyboard-contract.json`. `--release` also checks exact-master review and final-approval declarations. Neither flag performs listening, authenticates receipts, verifies actual renderer pixels or authorizes upload. Fresh templates pass planning structure and intentionally fail production/release gates until filled.
+
+The public pack contains generalized guidance and original worked exercises, not the private study corpus. Compare installed and canonical revisions before production without overwriting dirty local work. See [production contract](references/production-specification.md), [shot repairs](references/shot-grammar.md) and [brief](templates/production-brief.md).
 
 ## License and attribution
 
