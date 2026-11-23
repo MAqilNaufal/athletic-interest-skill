@@ -1,7 +1,7 @@
 ---
 name: athletic-interest-editorial-analysis
 description: "Plan and review evidence-led documentary video essays."
-version: 1.1.0
+version: 1.2.0
 author: MAqilNaufal, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -40,6 +40,18 @@ Create one folder for the episode and copy the files from `templates/` into it:
 
 Run `terminal(command="python3 scripts/validate_dossier.py <dossier>")` for planning structure, then add `--strict` before production and `--release` before final delivery. Fill the contract and brief first; untouched templates intentionally fail strict validation. A clean validation confirms dossier structure only; it is not factual, rights, voice, music, or artistic approval.
 
+## Production control loop
+
+Treat the dossier as the film's source of truth and the encoded master as the thing being approved. Do not substitute a renderer's green status, a contact sheet, or a project preview for review of the actual delivery file.
+
+1. **Preflight the selected path.** Confirm the renderer/editor, fonts, codecs, asset paths, narration method, audio tools, output dimensions, frame rate, and available storage before building scenes. Record the exact toolchain and supported properties in the storyboard contract. Completion: a short probe can render, decode, and play with sound.
+2. **Choose one production route.** Mark each sequence material-led, footage/NLE, browser/canvas, compositor, or hybrid. The route follows the visual job: sourced action stays sourced; a mechanism can be diagrammed; a chart can be generated. Completion: every sequence has one route owner and no diagram silently replaces unavailable proof.
+3. **Build the hardest representative sequence first.** Use final narration timing, intended asset treatment, captions, music behavior, and transition into the next idea. Render a short encoded proof, inspect its full-resolution frames and listen to its delivered audio. Completion: the proof passes the relevant review gates or has a named revision decision; do not scale an unreviewed approach across the episode.
+4. **Lock approved contracts, not pixels by accident.** After the proof is accepted, retain its source, cue IDs, asset IDs, take hashes, timings, style decisions, and review receipt. A claim, take, asset, subtitle, or mix change invalidates only its dependent sequences plus downstream timing; it never inherits approval just because filenames remain the same.
+5. **Render and review in bounded units.** Use deterministic time, integer-frame boundaries, bounded retries, and resumable chunks. Before reusing a chunk, verify its dependency hashes, frame range, duration, decode, and audio alignment. Completion: every reused or newly rendered unit has an explicit receipt.
+6. **Inspect motion and sound before final encoding.** Inspect frame zero, cuts, transitions, full-resolution suspect frames, and normal-speed playback; listen to the delivered mix rather than inferring it from waveforms. Completion: no gate is passed by a proxy artifact or unreviewed audio.
+7. **Approve the exact master.** Technical, factual, editorial, and audio reviewers independently record the encoded master SHA256. Any picture, subtitle, fact, or mux change creates a new master and reopens affected gates. Completion: final approval, if granted, names the same hash that may be transferred or uploaded.
+
 ## Procedure
 
 0. **Verify scope and freshness.** Resolve installed realpath, owning repository, HEAD, dirty state and canonical remote revision. Preserve dirty work; inspect a pinned published copy separately if stale. Inventory the full pack, not just SKILL.md. Keep public guidance separate from private study receipts; record prior coverage and what this session actually inspected in the brief. A missing local file is not proof prior research never existed.
@@ -52,9 +64,10 @@ Run `terminal(command="python3 scripts/validate_dossier.py <dossier>")` for plan
 7. **Specify the sequence operation.** For each beat, use `argument -> visual evidence -> operation -> consequence`. Name actor, resource, unit, relation, constraint, entry state, visible change, and result. Completion: the shot can be understood without its headline.
 8. **Map background music.** Select original or licensed instrumental music only after the final VO cue map exists. Map narrative state, energy, entry/exit, stems/edit points, and ducking or silence. Completion: music supports narrative contrast and cannot mask VO, quotes, or source audio.
 9. **Build an animatic before production polish.** Test the claim map, final cue timing, asset treatment, handoffs, and key mechanisms in playback. Completion: every section has a clear question, answer, and visual change.
-10. **Choose a toolchain after the plan.** Use footage/NLE for lived action, documents for attribution, charts for measured change, diagrams for mechanisms, and HTML/3D only where they clarify the operation. Completion: implementation serves the edit instead of substituting for it.
-11. **Run independent review gates.** Technical, factual, editorial, and audio approval are separate verdicts. Completion: every gate is `PASS`, `FAIL`, `UNREVIEWED`, or `BLOCKED`; none is implied by a successful export.
-12. **Package delivery accurately.** Label the result storyboard, animatic, draft, or final film. Preserve sources and project records according to rights and retention requirements. Completion: delivered status matches what was actually reviewed.
+10. **Prove the hardest sequence.** Build and encode the most demanding representative passage before scaling production. Inspect full-resolution frames, transitions, and delivered audio against the dossier. Completion: the visual treatment has passed review or has a recorded revision decision.
+11. **Choose a toolchain after the plan.** Use footage/NLE for lived action, documents for attribution, charts for measured change, diagrams for mechanisms, and HTML/3D only where they clarify the operation. Completion: implementation serves the edit instead of substituting for it.
+12. **Run independent review gates.** Technical, factual, editorial, and audio approval are separate verdicts against the encoded master. Completion: every gate is `PASS`, `FAIL`, `UNREVIEWED`, or `BLOCKED`; none is implied by a successful export.
+13. **Package delivery accurately.** Label the result storyboard, animatic, draft, or final film. Preserve sources and project records according to rights and retention requirements. Completion: delivered status matches what was actually reviewed.
 
 ## Visual and editorial rules
 
@@ -87,4 +100,6 @@ Run `terminal(command="python3 scripts/validate_dossier.py <dossier>")` for plan
 - Every visual asset has a provenance, treatment, and narrative-role record.
 - Every narration cue has final-clone verification and retimed shot cues.
 - Every music cue has a source/license and ducking/silence plan.
+- The hardest representative sequence has an encoded proof and a recorded review decision before full-scale production.
+- Reused render chunks have matching contract/asset/take dependencies, duration, and decode receipts.
 - Delivered video passes all four independent review gates; unresolved gates stay labeled.
